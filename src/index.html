@@ -6,13 +6,20 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <!-- <script src="./data/injuries/injuries.js"></script> -->
-    <!-- <script src="./data/pokemon/pokemon.js"></script> -->
-    <!-- <script src="./data/steam/steam.js"></script> -->
-    <!-- <script src="./data/worldbank/worldbank.js"></script> -->
-    <!-- <script src="./data/lol/lol.js"></script> -->
+
+    <div id="displayExplanation"> <a href="#"></a>
+      <p> Explicacion de la pagina</p>
+      <button id="continueButton">Continue</button>
+    </div>
+
+    <div id="displayPokemonList" style ="display:none">
+      <h1> List of Pokemons</h1>
+    </div>
+
+    <!-- Loading js scripts -->
+    <script src="./data/pokemon/pokemon.js"></script>
     <script src="data.js"></script>
     <script src="main.js"></script>
+
   </body>
 </html>
