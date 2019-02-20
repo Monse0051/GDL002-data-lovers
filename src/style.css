@@ -1,0 +1,36 @@
+/*
+#triangulo {
+
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    background: #F3F30B;
+    padding: 0 30px;
+    line-height: 55px;
+}
+
+    #background{
+      position: absolute;
+      left: 0px;
+      top: 0px;
+    }  position: absolute;
+*/
+/* Pokedex_1 */
+body{
+  display: flex;
+  background: url('https://i.postimg.cc/vBdbrwqg/Pokedex-Chido.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.pokemon{
+  float:left;
+  background-color: white;
+}
+
+/*#triangulo{
+width: 0;
+height: 0;
+border-style: solid;
+border-width: 50px 0 50px 86.6px;
+border-color: transparent transparent transparent #F3F30B;
+}*/
