@@ -7,7 +7,7 @@
   },
   "extends": "eslint:recommended",
   "globals": {
-    "cipher": false
+    "dataLovers": false, "POKEMON": false
   },
   "rules": {
     "no-console": 0,
