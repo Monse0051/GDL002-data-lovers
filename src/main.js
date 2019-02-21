@@ -31,3 +31,20 @@ function filterPokemons(type){
 
   fillElements(filteredPokemons, divPokemonList);
 }
+
+function averaged(){
+  document.getElementById("displayPokemonList").style.display="none";
+  document.getElementById("displayAverage").style.display = "block";
+  let averageMsg = window.dataLovers.average();
+  document.getElementById("amountAveraged").innerHTML = averageMsg;
+  
+ }
+
+document.getElementById("average").addEventListener("click", averaged);
+
+function goStart(){
+  document.getElementById("displayPokemonList").style.display = "block";
+  document.getElementById("displayAverage").style.display = "none";
+
+}
+document.getElementById("goStart").addEventListener("click", goStart);

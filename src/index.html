@@ -7,16 +7,22 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-
+<!-- First display whit explanation of tha page  -->
     <div id="displayExplanation"> <a href="#"></a>
       <p> Explicacion de la pagina</p>
       <button id="continueButton">Continue</button>
     </div>
-
+<!-- Secon display whit list of pokemons and functions buttons -->
     <div id="displayPokemonList" style ="display:none">
       <h1> List of Pokemons</h1>
-      <div id= "listOfPokemons">
+      <button id="average"> Promediar </button>
+      <div id= "listOfPokemons"></div>
       </div>
+<!-- Display of average about the candies that you need to evolve a pokemon -->
+    <div id="displayAverage" style ="display:none">
+      <p class = "mensajeAverage"> Este es el promedio de dulces que necesitas para evolucionar algún pokemon</p>
+      <p id = "amountAveraged"></p>
+      <button id="goStart">Regresar</button>
     </div>
 
     <!-- Loading js scripts -->

@@ -27,6 +27,30 @@ body{
   background-color: white;
 }
 
+#average{
+  width:5%;
+  height:5%;
+  background-color:pink;
+  margin: 5px;
+  padding:10px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  font-size:11px;
+  line-height:32px;
+  text-transform: uppercase;
+  float:left;
+  color:#fff;
+  text-decoration:none;
+  padding:5px 5px 5px 0;
+}
+#average:hover{
+  opacity: 0.50;
+  -moz-opacity: .50;
+  filter:alpha (opacity=50);
+}
+
+
 /*#triangulo{
 width: 0;
 height: 0;
