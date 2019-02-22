@@ -1,33 +1,99 @@
-/*
-#triangulo {
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 
+body{
+  font-size: 12px;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+}
+
+.background{
+  display: block;
+  width: 100%;
+}
+
+.pokemon{
+  float:left;
+  background-color: white;
+}
+
+#fourPokemons{
+width: 40%;
+}
+
+#options{
+  text-align: left;
+  padding: 0% 15% 0% 20% ;
+}
+
+#pageExplanation{
+
+
+}
+
+#continueButton {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.95em;
     display: inline-block;
     vertical-align: middle;
     position: relative;
     background: #F3F30B;
-    padding: 0 30px;
+    padding: 0% 5%;
     line-height: 55px;
 }
 
-    #background{
+
+#displayPokemonList{
+   display:none;
+}
+h1{
+  font-size: 180%;
+}
+
+#average{
+ width:5%;
+ height:5%;
+ background-color:pink;
+ margin: 5px;
+ padding:10px;
+ -webkit-border-radius: 50px;
+ -moz-border-radius: 50px;
+ border-radius: 50px;
+ font-size:11px;
+ line-height:32px;
+ text-transform: uppercase;
+ float:left;
+ color:#fff;
+ text-decoration:none;
+ padding:5px 5px 5px 0;
+}
+
+#average:hover{
+ opacity: 0.50;
+ -moz-opacity: .50;
+ filter:alpha (opacity=50);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*    #background{
       position: absolute;
       left: 0px;
       top: 0px;
     }  position: absolute;
 */
 /* Pokedex_1 */
-body{
-  display: flex;
-  background: url('https://i.postimg.cc/vBdbrwqg/Pokedex-Chido.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.pokemon{
-  float:left;
-  background-color: white;
-}
 
-/*#triangulo{
+
+/*#continueButton{
 width: 0;
 height: 0;
 border-style: solid;
