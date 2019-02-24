@@ -28,12 +28,12 @@
          </div>
        <br>
        <br>
-      <button id="continueButton">Continue</button>
+      <button id="continueButton">Comenzar</button>
     </div>
 
 <!-- Secon display whit list of pokemons and functions buttons -->
     <div id="displayPokemonList" style ="display:none">
-      <h1> List of Pokemons</h1>
+      <h1> ¡Lista de Pokemones de la region de Kanto! </h1>
       <button id="average"> Promediar </button>
       <p> Filtrar por tipo</p>
       <select id= "typeOfPokemon" name="boxTypes" size="4">
@@ -42,10 +42,8 @@
         <option>Tierra</option>
         <option>Psíquico</option>
         <option>Fantasma</option>
-        <option>Siniestro</option>
         <option>Veneno</option>
         <option>Lucha</option>
-        <option>Acero</option>
         <option>Fuego</option>
         <option>Bicho</option>
         <option>Dragón</option>
@@ -64,7 +62,13 @@
       <button id="goStart">Regresar</button>
     </div>
 
-    <!-- Loading js scripts -->
+<!-- Display of info about the pokemos what user selected -->
+    <div id="displayInfoPokemons" style ="display:none">
+      <p class = "mensajeAverage"> ¿Quién es este Pokemon?</p>
+      <p id = "infoPokemons"></p>
+      <button id="goOut">Regresar</button>
+    </div>
+<!-- Loading js scripts -->
     <script src="./data/pokemon/pokemon.js"></script>
     <script src="data.js"></script>
     <script src="main.js"></script>

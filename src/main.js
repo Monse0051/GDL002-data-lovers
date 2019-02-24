@@ -9,12 +9,10 @@ function fillElements (pokemonList, divElement){
   for(let i=0; i<pokemonList.length; i++) {
     let divPokemon = document.createElement("div");
     divPokemon.className = "pokemon";
-    divPokemon.innerHTML = "<img src=\"" +pokemonList[i].img + "\">";
-
+    divPokemon.innerHTML = "<img src=\"" +pokemonList[i].img + "\">" + "<p> </p>"+ pokemonList[i].name;
     // TODO: show pokemons information:
     // Create a callback function that prints/shows pokemon information
     //divPokemon.addEventListener("click", ()=>console.log("Pokemon callback"));
-
     divElement.insertAdjacentElement("beforeend", divPokemon);
   }
 }
@@ -40,10 +38,8 @@ function filterPokemons(){
                             Tierra:     "Ground",
                             Psíquico:   "Psychic",
                             Fantasma:   "Ghost",
-                            Siniestro:  "Dark",
                             Veneno:     "Poison",
                             Lucha:      "Fighting",
-                            Acero:      "Steel",
                             Fuego:      "Fire",
                             Bicho:      "Bug",
                             Dragón:     "Dragon",
