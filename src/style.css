@@ -25,11 +25,6 @@ width: 40%;
   padding: 0% 15% 0% 20% ;
 }
 
-#pageExplanation{
-
-
-}
-
 #continueButton {
     font-family: 'Press Start 2P', cursive;
     font-size: 0.95em;
@@ -41,54 +36,54 @@ width: 40%;
     line-height: 55px;
 }
 
-
 #displayPokemonList{
-   display:none;
+   display: none;
 }
+
+#displayAverage{
+  display:none;
+}
+
+#box{
+display: flex;
+justify-content: space-between;
+}
+
+#limpiar{
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.85em;
+  background-color: #F3F30B;
+  width: 8.5%;
+}
+
+#goStart{
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.85em;
+  height: 50px;
+background: #EF1A8E;
+-moz-border-radius: 100%;
+-webkit-border-radius: 100%;
+}
+
+#typeOfPokemon{
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.85em;
+  background-color: #5CEF1A;
+  width: 15%;
+  height: 150px;
+}
+
 h1{
   font-size: 180%;
 }
 
 #average{
- width:5%;
- height:5%;
- background-color:pink;
- margin: 5px;
- padding:10px;
- -webkit-border-radius: 50px;
- -moz-border-radius: 50px;
- border-radius: 50px;
- font-size:11px;
- line-height:32px;
- text-transform: uppercase;
- float:left;
- color:#fff;
- text-decoration:none;
- padding:5px 5px 5px 0;
+ font-family: 'Press Start 2P', cursive;
+ font-size: 0.85em;
+ background-color: #286BB8;
+ width: 8.5%;
+ height: 110px;/* ¿por qué no puedo ponerlo en porcentaje? si lo pongo en porcentaje no responde*/
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
 }
-
-#average:hover{
- opacity: 0.50;
- -moz-opacity: .50;
- filter:alpha (opacity=50);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/*    #background{
-      position: absolute;
-      left: 0px;
-      top: 0px;
-    }  position: absolute;
-*/
-/* Pokedex_1 */
-
