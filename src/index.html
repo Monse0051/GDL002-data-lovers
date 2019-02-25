@@ -34,42 +34,33 @@
        <br>
        <br>
 
-       <button id="continueButton">COMENZAR</button>
-
+=======
+      <button id="continueButton">Comenzar</button>
     </div>
 
-<!-- Second display with list of pokemons and functions buttons -->
+<!-- Secon display whit list of pokemons and functions buttons -->
+    <div id="displayPokemonList" style ="display:none">
+      <h1> ¡Lista de Pokemones de la region de Kanto! </h1>
+      <button id="average"> Promediar </button>
+      <p> Filtrar por tipo</p>
+      <select id= "typeOfPokemon" name="boxTypes" size="4">
+        <option>Planta</option>
+        <option>Agua</option>
+        <option>Tierra</option>
+        <option>Psíquico</option>
+        <option>Fantasma</option>
+        <option>Veneno</option>
+        <option>Lucha</option>
+        <option>Fuego</option>
+        <option>Bicho</option>
+        <option>Dragón</option>
+        <option>Volador</option>
+        <option>Normal</option>
+        <option>Eléctrico</option>
+        <option>Roca</option>
+        <option>Hielo</option>
+      </select>
 
-    <div id="displayPokemonList">
-
-   <div id="box">
-       <button id="average"> PROMEDIAR </button>
-
-<!-- ¿cómo acomodar las divisiones y usar los flex de average y box juntos? -->
-
-        <select id= "typeOfPokemon" name="boxTypes" size="4">
-          <option>Planta</option>
-          <option>Agua</option>
-          <option>Tierra</option>
-          <option>Psíquico</option>
-          <option>Fantasma</option>
-          <option>Veneno</option>
-          <option>Lucha</option>
-          <option>Fuego</option>
-          <option>Bicho</option>
-          <option>Dragón</option>
-          <option>Volador</option>
-          <option>Normal</option>
-          <option>Eléctrico</option>
-          <option>Roca</option>
-          <option>Hielo</option>
-        </select>
-           <button id="limpiar">Limpiar<p>filtro</p></button>
-      </div>
-
-      <h1> Pokémones de la región de Kanto:</h1>
-      <div id= "listOfPokemons"></div>
-      </div>
 
 <!-- Display of average candies needed to evolve a pokemon -->
 
@@ -88,33 +79,3 @@
       <button id="goStart">Regresar</button>
     </div>
 
-  <!-- Display of info about the pokemos what user selected -->
-       <div id="displayInfoPokemons" style ="display:none">
-         <p class = "mensajeAverage"> ¿Quién es este Pokemon?</p>
-         <div id = "infoPokemons">
-           <p>Nombre: </p>
-           <p></p>
-           <p> </p>
-           <p></p>
-           <p></p>
-           <p></p>
-           <p></p>
-           <p></p>
-           <p></p>
-           <p></p>
-           <p></p>
-           <p></p>
-           <p></p>
-           <p></p>
-         </div>
-
-         <button id="back">Regresar</button>
-       </div>
-
-    <!-- Loading js scripts -->
-    <script src="./data/pokemon/pokemon.js"></script>
-    <script src="data.js"></script>
-    <script src="main.js"></script>
-
-  </body>
-</html>

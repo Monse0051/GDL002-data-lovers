@@ -1,20 +1,77 @@
 function next(){
   document.getElementById("displayExplanation").style.display="none";
+  document.getElementById("displayInfoPokemons").style.display = "none";
   document.getElementById("displayPokemonList").style.display = "block";
+  showPokemons();
  }
 
 document.getElementById("continueButton").addEventListener("click", next);
+
+function listToString(list){
+  let string = ""
+  for(let i=0; i<list.length - 1; i++){
+    string += " " + list[i] + ",";
+  }
+  string += " " + list[list.length-1];
+  return string;
+}
+
+function evolutionsToString(listOfEvolutions){
+
+  let string = "";
+  if(typeof listOfEvolutions === "undefined" ) {
+      return "N/A";
+  }
+
+  for(let i=0; i<listOfEvolutions.length; i++){
+    string +=  " " + listOfEvolutions[i].name;
+  }
+  return string;
+}
+
+/*
+* Show Poke information
+* input: pokemon, a pokemon object inside of pokemon list
+* pokemon list is get from pokemon.js
+*/
+function showPokemonInfo(pokemon){
+  document.getElementById("displayPokemonList").style.display = "none";
+  document.getElementById("displayInfoPokemons").style.display = "block";
+
+  let divPokemonInfo = document.getElementById("infoPokemons");
+  let pokemonStats = divPokemonInfo.getElementsByTagName("p");
+
+   pokemonStats[0].innerHTML = "Nombre: #" + pokemon.num + " " + pokemon.name;
+   pokemonStats[1].innerHTML = "<img src='" +  pokemon.img + "'>";
+   pokemonStats[2].innerHTML = "Tipo:" + listToString(pokemon.type);
+   pokemonStats[3].innerHTML = "Altura: " + pokemon.height;
+   pokemonStats[4].innerHTML = "Peso: " + pokemon.weight;
+   pokemonStats[5].innerHTML = "Dulce: " + pokemon.candy;
+   pokemonStats[6].innerHTML = "Cantidad de dulces para evolucionar: " +
+              (pokemon.hasOwnProperty("candy_count")?  pokemon.candy_count : "N/A");
+
+   pokemonStats[7].innerHTML = "Próximo huevo a: " +
+              (pokemon.egg = "Not in eggs" ? "No en huevos": pokemon.egg);
+
+   pokemonStats[8].innerHTML = "Probabilidad de evolucionar: " + pokemon.avg_spawns + "%";
+   pokemonStats[9].innerHTML = "Tiempo de nacimiento: " + pokemon.spawn_time;
+   pokemonStats[10].innerHTML = "Multiplicadores: " + pokemon.multipliers;
+   pokemonStats[11].innerHTML = "Debilidades:" + listToString(pokemon.weaknesses);
+   pokemonStats[12].innerHTML = "Pre-evolución: " + evolutionsToString(pokemon.prev_evolution);
+   pokemonStats[13].innerHTML = "Evolución: " + evolutionsToString(pokemon.next_evolution);
+}
+
+document.getElementById("back").addEventListener("click", next);
+
 
 function fillElements (pokemonList, divElement){
   for(let i=0; i<pokemonList.length; i++) {
     let divPokemon = document.createElement("div");
     divPokemon.className = "pokemon";
-    divPokemon.innerHTML = "<img src=\"" +pokemonList[i].img + "\">";
+    divPokemon.innerHTML = "<button><img src='" + pokemonList[i].img + "'></button>" + "<p> </p>"+ pokemonList[i].name;
 
-    // TODO: show pokemons information:
-    // Create a callback function that prints/shows pokemon information
-    //divPokemon.addEventListener("click", ()=>console.log("Pokemon callback"));
-
+    // callback function that prints/shows pokemon information
+    divPokemon.addEventListener("click", ()=>showPokemonInfo(pokemonList[i]));
     divElement.insertAdjacentElement("beforeend", divPokemon);
   }
 }
@@ -24,8 +81,6 @@ function showPokemons(){
   let divPokemonList = document.getElementById("listOfPokemons");
   fillElements(pokemonList, divPokemonList);
 }
-
-document.getElementById("continueButton").addEventListener("click", showPokemons);
 
 function filterPokemons(){
   let pokemonList = POKEMON.pokemon;
@@ -40,10 +95,8 @@ function filterPokemons(){
                             Tierra:     "Ground",
                             Psíquico:   "Psychic",
                             Fantasma:   "Ghost",
-                            Siniestro:  "Dark",
                             Veneno:     "Poison",
                             Lucha:      "Fighting",
-                            Acero:      "Steel",
                             Fuego:      "Fire",
                             Bicho:      "Bug",
                             Dragón:     "Dragon",
@@ -76,3 +129,11 @@ function goStart(){
 
 }
 document.getElementById("goStart").addEventListener("click", goStart);
+
+function clean(){
+ let pokemonList = POKEMON.pokemon;
+ let divPokemonList = document.getElementById("listOfPokemons");
+ divPokemonList.innerHTML = "";
+ showPokemons();
+}
+   document.getElementById('limpiar').addEventListener('click', clean);
