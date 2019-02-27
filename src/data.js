@@ -1,5 +1,4 @@
 
-
 window.dataLovers = {
 
 /*
@@ -21,7 +20,7 @@ filterByType (pokemon, type) {
   return filterType;
 },
 
-// promediar
+// averaged
 average () {
   let pokemons = POKEMON.pokemon;
   let contador = 0;
@@ -31,6 +30,43 @@ average () {
     }
   }
   return contador / 70;
+},
+
+// Sort
+comparePokemonsById(a, b){
+    return a.id - b.id;
+ },
+
+comparePokemons(a, b) {
+  let retVal;
+  if (a.name.toLowerCase() < b.name.toLowerCase()) {
+    retVal = -1;
   }
+  else if(a.name.toLowerCase() > b.name.toLowerCase()) {
+    retVal = 1;
+  }
+  else {
+    retVal = 0; // pokemon a = pokemon b
+  }
+
+  return retVal;
+},
+
+sort(isAscendent){
+  let pokemons = POKEMON.pokemon;
+  let pokemonsSorted;
+  if(isAscendent){
+    pokemonsSorted = pokemons.sort(window.dataLovers.comparePokemons);
+  }
+  else{
+    pokemonsSorted = pokemons.sort(window.dataLovers.comparePokemons).reverse();
+  }
+  return pokemonsSorted;
+},
+
+sortById(){
+  return POKEMON.pokemon.sort(window.dataLovers.comparePokemonsById);
+}
+
 
 };
