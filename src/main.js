@@ -8,7 +8,7 @@ function next(){
 document.getElementById("continueButton").addEventListener("click", next);
 
 function listToString(list){
-  let string = ""
+  let string = "";
   for(let i=0; i<list.length - 1; i++){
     string += " " + list[i] + ",";
   }
@@ -51,11 +51,13 @@ function showPokemonInfo(pokemon){
               (pokemon.hasOwnProperty("candy_count")?  pokemon.candy_count : "N/A");
 
    pokemonStats[7].innerHTML = "Próximo huevo a: " +
-              (pokemon.egg = "Not in eggs" ? "No en huevos": pokemon.egg);
+              ( ("Not in Eggs" == pokemon.egg) ? "No en huevos": pokemon.egg);
 
    pokemonStats[8].innerHTML = "Probabilidad de evolucionar: " + pokemon.avg_spawns + "%";
    pokemonStats[9].innerHTML = "Tiempo de nacimiento: " + pokemon.spawn_time;
-   pokemonStats[10].innerHTML = "Multiplicadores: " + pokemon.multipliers;
+   pokemonStats[10].innerHTML = "Multiplicadores: " +
+              ("null" == pokemon.multipliers ? "N/A": pokemon.multipliers);
+
    pokemonStats[11].innerHTML = "Debilidades:" + listToString(pokemon.weaknesses);
    pokemonStats[12].innerHTML = "Pre-evolución: " + evolutionsToString(pokemon.prev_evolution);
    pokemonStats[13].innerHTML = "Evolución: " + evolutionsToString(pokemon.next_evolution);
@@ -77,10 +79,34 @@ function fillElements (pokemonList, divElement){
 }
 
 function showPokemons(){
-  let pokemonList = POKEMON.pokemon;
+  let pokemonList = window.dataLovers.sortById();
   let divPokemonList = document.getElementById("listOfPokemons");
+  divPokemonList.innerHTML = "";
   fillElements(pokemonList, divPokemonList);
 }
+
+document.getElementById('limpiar').addEventListener('click', showPokemons);
+
+function showPokemonsUpward(){
+  //let pokemonList = POKEMON.pokemon;
+  let divPokemonListA = document.getElementById("listOfPokemons");
+  divPokemonListA.innerHTML = "";
+  let pokemonListA = window.dataLovers.sort(true);
+  fillElements(pokemonListA, divPokemonListA);
+
+}
+
+document.getElementById("sortUpward").addEventListener("click", showPokemonsUpward);
+
+function showPokemonsFalling(){
+  //let pokemonList = POKEMON.pokemon;
+  let divPokemonListA = document.getElementById("listOfPokemons");
+  divPokemonListA.innerHTML = "";
+  let pokemonListA = window.dataLovers.sort(false);
+  fillElements(pokemonListA, divPokemonListA);
+}
+
+document.getElementById("sortFalling").addEventListener("click", showPokemonsFalling);
 
 function filterPokemons(){
   let pokemonList = POKEMON.pokemon;
@@ -118,7 +144,6 @@ function averaged(){
   document.getElementById("displayAverage").style.display = "block";
   let averageMsg = window.dataLovers.average();
   document.getElementById("amountAveraged").innerHTML = averageMsg;
-
  }
 
 document.getElementById("average").addEventListener("click", averaged);
@@ -128,12 +153,5 @@ function goStart(){
   document.getElementById("displayAverage").style.display = "none";
 
 }
-document.getElementById("goStart").addEventListener("click", goStart);
 
-function clean(){
- let pokemonList = POKEMON.pokemon;
- let divPokemonList = document.getElementById("listOfPokemons");
- divPokemonList.innerHTML = "";
- showPokemons();
-}
-   document.getElementById('limpiar').addEventListener('click', clean);
+document.getElementById("goStart").addEventListener("click", goStart);
