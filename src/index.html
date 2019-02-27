@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -43,7 +43,10 @@
     <div id="displayPokemonList">
 
    <div id="box">
+
        <button id="average"> PROMEDIAR </button>
+       <button id= "sortUpward"> a > z </button>
+       <button id= "sortFalling"> z > a </button>
 
 <!-- ¿cómo acomodar las divisiones y usar los flex de average y box juntos? -->
 
@@ -64,7 +67,7 @@
           <option>Roca</option>
           <option>Hielo</option>
         </select>
-           <button id="limpiar">Limpiar<p>filtro</p></button>
+           <button id="limpiar">LIMPIAR<p>FILTRO</p></button>
       </div>
 
       <h1> Pokémones de la región de Kanto:</h1>
@@ -85,16 +88,16 @@
       <br>
       <br>
       <br>
-      <button id="goStart">Regresar</button>
+      <button id="goStart" class= "regresar">Regresar</button>
     </div>
 
   <!-- Display of info about the pokemos what user selected -->
-       <div id="displayInfoPokemons" style ="display:none">
-         <p class = "mensajeAverage"> ¿Quién es este Pokemon?</p>
+       <div id="displayInfoPokemons" class="displayInfoPoke">
+       <img id="whoPokemon" src='https://i.postimg.cc/FF2GDyVd/quieneseste.png' border='0' alt='quieneseste'>
          <div id = "infoPokemons">
-           <p>Nombre: </p>
            <p></p>
-           <p> </p>
+           <p></p>
+           <p></p>
            <p></p>
            <p></p>
            <p></p>
@@ -108,7 +111,7 @@
            <p></p>
          </div>
 
-         <button id="back">Regresar</button>
+         <button id="back" class= "regresar">Regresar</button>
        </div>
 
     <!-- Loading js scripts -->

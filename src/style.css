@@ -1,89 +1,246 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 
 body{
-  font-size: 12px;
+  overflow: auto;
+  font-size: .80em;
   font-family: 'Press Start 2P', cursive;
   text-align: center;
-}
-
-.background{
-  display: block;
-  width: 100%;
-}
-
-.pokemon{
-  float:left;
-  background-color: white;
-}
-
-#fourPokemons{
-width: 40%;
-}
-
-#options{
-  text-align: left;
-  padding: 0% 15% 0% 20% ;
-}
-
-#continueButton {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.95em;
-    display: inline-block;
-    vertical-align: middle;
-    position: relative;
-    background: #F3F30B;
-    padding: 0% 5%;
-    line-height: 55px;
-}
-
-#displayPokemonList{
-   display: none;
-}
-
-#displayAverage{
-  display:none;
-}
-
-#box{
-display: flex;
-justify-content: space-between;
-}
-
-#limpiar{
-  font-family: 'Press Start 2P', cursive;
-  font-size: 0.85em;
-  background-color: #F3F30B;
-  width: 8.5%;
-}
-
-#goStart{
-  font-family: 'Press Start 2P', cursive;
-  font-size: 0.85em;
-  height: 50px;
-background: #EF1A8E;
--moz-border-radius: 100%;
--webkit-border-radius: 100%;
-}
-
-#typeOfPokemon{
-  font-family: 'Press Start 2P', cursive;
-  font-size: 0.85em;
-  background-color: #5CEF1A;
-  width: 15%;
-  height: 150px;
 }
 
 h1{
   font-size: 180%;
 }
 
-#average{
- font-family: 'Press Start 2P', cursive;
- font-size: 0.85em;
- background-color: #286BB8;
- width: 8.5%;
- height: 110px;/* ¿por qué no puedo ponerlo en porcentaje? si lo pongo en porcentaje no responde*/
-    -moz-border-radius: 100%;
-    -webkit-border-radius: 100%;
-    border-radius: 100%;
+/* Imágenes */
+
+.background{
+  display: block;
+  width: 100%;
 }
+
+#fourPokemons{
+  width: 40%;
+}
+
+#whoPokemon{
+  width: 100%
+}
+
+/*Displays (páginas) "invisibles"*/
+
+#displayPokemonList{
+  display: none;
+}
+
+#displayInfoPokemons{
+  display: none;
+}
+
+#displayAverage{
+  display:none;
+}
+
+
+/*Texto del primer display*/
+
+#options{
+  text-align: left;
+  padding: 0% 15% 0% 20% ;
+}
+
+/*Caja que contiene los botones del display 2*/
+
+#box{
+display: flex;
+justify-content: space-between;
+}
+
+/*Estilo de la caja que filtra los pokémones por tipo*/
+
+#typeOfPokemon{
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.85em;
+  background-color: #5CEF1A;
+  width: 200px;
+  height: 150px;
+}
+
+/* Información de los Pokemones elegidos uno por uno */
+
+.displayInfoPoke{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    float: left;
+}
+
+#infoPokemons{
+    position: absolute;
+    top: 15%;
+    left: 10%;
+}
+
+/* Botones información de cada Pokémon*/
+
+.pokemon{
+  float:left;
+  background-color: white;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+.pokemon:hover {
+  background-color: #FB1316;
+   color: white;
+ }
+
+/*Botones*/
+
+ #average{
+
+   font-family: 'Press Start 2P', cursive;
+   font-size: 0.85em;
+   background-color: #286BB8;
+   width: 110px;
+   height: 110px;
+   -moz-border-radius: 100%;
+   -webkit-border-radius: 100%;
+   border-radius: 100%;
+ }
+
+ #limpiar{
+   font-family: 'Press Start 2P', cursive;
+   font-size: 0.85em;
+   background-color: #F3F30B;
+   width: 110px;
+ }
+
+ #continueButton {
+   font-family: 'Press Start 2P', cursive;
+   font-size: 0.95em;
+   display: inline-block;
+   vertical-align: middle;
+   position: relative;
+   background: #F3F30B;
+   padding: 0% 5%;
+   line-height: 55px;
+ }
+
+ #goStart{
+   font-family: 'Press Start 2P', cursive;
+   font-size: 0.85em;
+   height: 50px;
+   background: #EF1A8E;
+   -moz-border-radius: 100%;
+   -webkit-border-radius: 100%;
+ }
+
+ #back {
+   font-family: 'Press Start 2P', cursive;
+   font-size: 0.95em;
+   display: inline-block;
+   vertical-align: middle;
+   position: relative;
+   background: #216BDB;
+   padding: 0% 5%;
+   line-height: 60px;
+ }
+
+
+ @media screen and (min-width: 780px) and (max-width: 1024px){
+
+   #average{
+     font-family: 'Press Start 2P', cursive;
+     font-size: 0.55em;
+     background-color: #286BB8;
+     width: 82.5px;
+     height: 82.5px;
+     -moz-border-radius: 100%;
+     -webkit-border-radius: 100%;
+     border-radius: 100%;
+   }
+
+   #limpiar{
+     font-family: 'Press Start 2P', cursive;
+     font-size: 0.55em;
+     background-color: #F3F30B;
+     width: 82.5px;
+   }
+
+ }
+
+ #typeOfPokemon{
+   font-family: 'Press Start 2P', cursive;
+   font-size: 0.85em;
+   background-color: #5CEF1A;
+   width: 150px;
+   height: 82.5px;
+ }
+
+ @media screen and (min-width: 480px) and (max-width: 780px){
+   #box{
+    display: flex;
+    align-items: flex-start;
+   }
+
+   #average{
+     font-family: 'Press Start 2P', cursive;
+     font-size: 0.60em;
+     background-color: #286BB8;
+     width: 85px;
+     height: 85px;
+     -moz-border-radius: 100%;
+     -webkit-border-radius: 100%;
+     border-radius: 100%;
+   }
+
+   #limpiar{
+     font-family: 'Press Start 2P', cursive;
+     font-size: 0.60em;
+     background-color: #F3F30B;
+     width: 70px;
+     height: 85px;
+   }
+ }
+
+ #typeOfPokemon{
+   font-family: 'Press Start 2P', cursive;
+   font-size: 0.85em;
+   background-color: #5CEF1A;
+   width: 150px;
+   height: 85px;
+ }
+
+ @media screen and (min-width: 272px) and (max-width: 480px){
+   #box{
+    display: flex;
+    align-items: flex-start;
+   }
+
+   #average{
+     font-family: 'Press Start 2P', cursive;
+     font-size: 0.60em;
+     background-color: #286BB8;
+     width: 85px;
+     height: 85px;
+     -moz-border-radius: 100%;
+     -webkit-border-radius: 100%;
+     border-radius: 100%;
+   }
+
+   #limpiar{
+     font-family: 'Press Start 2P', cursive;
+     font-size: 0.60em;
+     background-color: #F3F30B;
+     width: 70px;
+     height: 85px;
+   }
+ }
+
+ #typeOfPokemon{
+   font-family: 'Press Start 2P', cursive;
+   font-size: 0.85em;
+   background-color: #5CEF1A;
+   width: 150px;
+   height: 85px;
+ }
