@@ -21,8 +21,8 @@ filterByType (pokemon, type) {
 },
 
 // averaged
-average () {
-  let pokemons = POKEMON.pokemon;
+average (pokemon) {
+  let pokemons = pokemon;
   let contador = 0;
   for (let i=0; i<pokemons.length; i++){
     if (pokemons[i].hasOwnProperty('candy_count')) {
@@ -52,20 +52,19 @@ comparePokemons(a, b) {
   return retVal;
 },
 
-sort(isAscendent){
-  let pokemons = POKEMON.pokemon;
+sort(isAscendent, pokemon){
   let pokemonsSorted;
   if(isAscendent){
-    pokemonsSorted = pokemons.sort(window.dataLovers.comparePokemons);
+    pokemonsSorted = pokemon.sort(window.dataLovers.comparePokemons);
   }
   else{
-    pokemonsSorted = pokemons.sort(window.dataLovers.comparePokemons).reverse();
+    pokemonsSorted = pokemon.sort(window.dataLovers.comparePokemons).reverse();
   }
   return pokemonsSorted;
 },
 
-sortById(){
-  return POKEMON.pokemon.sort(window.dataLovers.comparePokemonsById);
+sortById(pokemon){
+  return pokemon.sort(window.dataLovers.comparePokemonsById);
 }
 
 
