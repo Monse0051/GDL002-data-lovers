@@ -79,7 +79,7 @@ function fillElements (pokemonList, divElement){
 }
 
 function showPokemons(){
-  let pokemonList = window.dataLovers.sortById();
+  let pokemonList = window.dataLovers.sortById(window.POKEMON.pokemon);
   let divPokemonList = document.getElementById("listOfPokemons");
   divPokemonList.innerHTML = "";
   fillElements(pokemonList, divPokemonList);
@@ -91,7 +91,7 @@ function showPokemonsUpward(){
   //let pokemonList = POKEMON.pokemon;
   let divPokemonListA = document.getElementById("listOfPokemons");
   divPokemonListA.innerHTML = "";
-  let pokemonListA = window.dataLovers.sort(true);
+  let pokemonListA = window.dataLovers.sort(true, window.POKEMON.pokemon);
   fillElements(pokemonListA, divPokemonListA);
 
 }
@@ -102,14 +102,14 @@ function showPokemonsFalling(){
   //let pokemonList = POKEMON.pokemon;
   let divPokemonListA = document.getElementById("listOfPokemons");
   divPokemonListA.innerHTML = "";
-  let pokemonListA = window.dataLovers.sort(false);
+  let pokemonListA = window.dataLovers.sort(false, window.POKEMON.pokemon);
   fillElements(pokemonListA, divPokemonListA);
 }
 
 document.getElementById("sortFalling").addEventListener("click", showPokemonsFalling);
 
 function filterPokemons(){
-  let pokemonList = POKEMON.pokemon;
+  let pokemonList = window.POKEMON.pokemon;
   let divPokemonList = document.getElementById("listOfPokemons");
   //clear pokemons
   divPokemonList.innerHTML = "";
@@ -142,7 +142,7 @@ document.getElementById("typeOfPokemon").addEventListener("click", filterPokemon
 function averaged(){
   document.getElementById("displayPokemonList").style.display="none";
   document.getElementById("displayAverage").style.display = "block";
-  let averageMsg = window.dataLovers.average();
+  let averageMsg = window.dataLovers.average(window.POKEMON.pokemon);
   document.getElementById("amountAveraged").innerHTML = averageMsg;
  }
 
