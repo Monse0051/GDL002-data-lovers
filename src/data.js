@@ -1,5 +1,4 @@
 
-
 window.dataLovers = {
 
 /*
@@ -21,9 +20,9 @@ filterByType (pokemon, type) {
   return filterType;
 },
 
-// promediar
-average () {
-  let pokemons = POKEMON.pokemon;
+// averaged
+average (pokemon) {
+  let pokemons = pokemon;
   let contador = 0;
   for (let i=0; i<pokemons.length; i++){
     if (pokemons[i].hasOwnProperty('candy_count')) {
@@ -31,6 +30,42 @@ average () {
     }
   }
   return contador / 70;
+},
+
+// Sort
+comparePokemonsById(a, b){
+    return a.id - b.id;
+ },
+
+comparePokemons(a, b) {
+  let retVal;
+  if (a.name.toLowerCase() < b.name.toLowerCase()) {
+    retVal = -1;
   }
+  else if(a.name.toLowerCase() > b.name.toLowerCase()) {
+    retVal = 1;
+  }
+  else {
+    retVal = 0; // pokemon a = pokemon b
+  }
+
+  return retVal;
+},
+
+sort(isAscendent, pokemon){
+  let pokemonsSorted;
+  if(isAscendent){
+    pokemonsSorted = pokemon.sort(window.dataLovers.comparePokemons);
+  }
+  else{
+    pokemonsSorted = pokemon.sort(window.dataLovers.comparePokemons).reverse();
+  }
+  return pokemonsSorted;
+},
+
+sortById(pokemon){
+  return pokemon.sort(window.dataLovers.comparePokemonsById);
+}
+
 
 };
